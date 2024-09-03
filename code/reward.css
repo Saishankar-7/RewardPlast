@@ -1,0 +1,306 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+:root {
+	--grey: #F4F2FF;
+	--dark-grey: #B7B7B7;
+
+	--green: #23AE00;
+	--light-green: #BDFFAC;
+
+	--red: #FE2727;
+	--light-red: #FFD2D2;
+
+	--blue: #277FFE;
+	--light-blue: #B6C6FF;
+	--dark-blue: #1368E3;
+
+	--bs: #AECFFF;
+	--text: #9B9B9B;
+}
+.nav a{
+    position: relative;
+    font-size: 1.1em;
+    color: white;
+    text-decoration: none;
+    margin-left: 40px;
+}
+.nav a::after{
+    content: '';
+    position: absolute;
+    left:0;
+    bottom: -6px;
+    width:100%;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    opacity: 0;
+    transition: .5s;
+}
+.nav a:hover::after{
+     opacity: 1;
+}
+.home
+{
+    position: absolute;
+    width: 100%;
+    height: 100vh; 
+    background:url('project.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 100px 0;
+}
+.home .content{
+    max-width: 6000x;
+    color: #fff;
+}
+.content h1{
+    font-size: 3em;
+    letter-spacing: .03em;
+}
+.content p{
+    margin: 10px 0 40px;
+}
+.content button{
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid #fff;
+    font-weight: 500;
+    padding: 10px 40px;
+    border-radius: 40px;
+    transition: .5s;
+    display: flex;
+}
+.content button:hover{
+    background:linear-gradient(90deg,#1e0b04,#71412a);
+}
+.content .btnLogin{
+    width :130px;
+    height:50px;
+    background:transparent;
+    border:2px solid #fff;
+    outline:none;
+    border-radius: 40px;
+    align-items: center;
+    cursor: pointer;
+    font-size: 10 em;
+    color: #fff;
+    font-weight:500;
+    margin-left: 40px;
+    transition: .5s;
+}
+.home .wrapper{
+    position: relative;
+    width: 440px;
+}
+.wrapper h2{
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+}
+.wrapper .input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 40px 0;
+}
+.input-box input{
+    width:100%;
+    height: 100%;
+    background: transparent;
+    border:1px solid #fff;
+    outline: none;
+    border-radius: 40px;
+    font-size: 1em;
+    color: #fff;
+    padding: 0 25px 0 45px;
+}
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left:45px;
+    transform: translateY(-50%);
+    font-size: 1 em;
+    color: #fff;
+    pointer-events: none;
+}
+a {
+	color: var(--blue);
+	transition: all .3s ease;
+	text-decoration: none;
+}
+
+a:hover {
+	color: var(--dark-blue);
+}
+
+body {
+	background:url('project.jpg') no-repeat ;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	padding: 0 16px;
+    position: relative;
+}
+
+.container {
+	max-width: 500px;
+	width: 100%;
+	position: relative;
+}
+form {
+	width: 100%;
+	padding: 28px;
+	border-radius: 12px;
+	background:transparent;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%) scale(.8);
+	opacity: 0;
+	z-index: 100;
+	transition: all .3s ease;
+	transition-delay: 0s;
+}
+form.active {
+	transform: translateY(-50%);
+	opacity: 1;
+	z-index: 200;
+	transition-delay: .3s;
+}
+.title {
+	font-size: 24px;
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+.form-group {
+	margin-bottom: 14px;
+}
+.form-group label {
+	display: inline-block;
+	margin-bottom: 4px;
+}
+.input-group {
+	width: 100%;
+	position: relative;
+}
+.input-group input {
+	padding: 12px 40px 12px 20px;
+	outline: none;
+	border-radius: 6px;
+	border: 1px solid var(--dark-grey);
+	width: 100%;
+	transition: all .3s ease;
+}
+
+/* Validation */
+.input-group input:focus,
+.input-group input:not(:placeholder-shown) {
+	border-color: var(--blue);
+	background: var(--grey);
+}
+.input-group input:focus + i,
+.input-group input:not(:placeholder-shown) + i {
+	color: var(--blue);
+}
+.input-group input:focus:valid {
+	box-shadow: 0 0 0 4px var(--light-green);
+}
+.input-group input:valid:not(:placeholder-shown) {
+	border-color: var(--green);
+}
+.input-group input:valid:not(:placeholder-shown) + i {
+	color: var(--green);
+}
+.input-group input:invalid:not(:placeholder-shown) {
+	border-color: var(--red);
+}
+.input-group input:invalid:not(:placeholder-shown) + i {
+	color: var(--red);
+}
+.input-group input:focus:invalid {
+	box-shadow: 0 0 0 4px var(--light-red);
+}
+.input-group input:focus,
+.input-group input:focus:placeholder-shown {
+	box-shadow: 0 0 0 4px var(--bs);
+}
+.input-group input:focus,
+        .input-group input:not(:placeholder-shown) {
+            border-color: var(--blue);
+            background: var(--grey);
+        }
+        .input-group input:focus + i,
+        .input-group input:not(:placeholder-shown) + i {
+            color: var(--blue);
+        }
+        .input-group input:focus:valid {
+            box-shadow: 0 0 0 4px var(--light-green);
+        }
+        .input-group input:valid:not(:placeholder-shown) {
+            border-color: var(--green);
+        }
+        .input-group input:valid:not(:placeholder-shown) + i {
+            color: var(--green);
+        }
+        .input-group input:invalid:not(:placeholder-shown) {
+            border-color: var(--red);
+        }
+        .input-group input:invalid:not(:placeholder-shown) + i {
+            color: var(--red);
+        }
+        .input-group input:focus:invalid {
+            box-shadow: 0 0 0 4px var(--light-red);
+        }
+        .input-group input:focus,
+        .input-group input:focus:placeholder-shown {
+            box-shadow: 0 0 0 4px var(--bs);
+        }
+
+/* Validation */
+
+.input-group i {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 20px;
+	color: var(--text);
+	pointer-events: none;
+	transition: all .3s ease;
+}
+.input-group ion-icon {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 20px;
+	color: var(--text);
+	pointer-events: none;
+	transition: all .3s ease;
+}
+.form-group .help-text {
+	font-size: 12px;
+	color: var(--text);
+}
+.btn-submit {
+	padding: 12px 0;
+	display: block;
+	width: 100%;
+	color: #fff;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: all .3s ease;
+	border: none;
+	font-weight: 500;
+	background: var(--blue);
+	margin-bottom: 20px;
+}
+.btn-submit:hover {
+	background: var(--dark-blue);
+}
+

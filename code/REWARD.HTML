@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Reward Plast</title>
+    <link rel="stylesheet" href="reward.css">
+</head>
+<body>
+    <section class="home">
+        <div class="content">
+            <h1><ion-icon name="earth"></ion-icon>REWARDPLAST</h1>
+            <h4><p>TURNING THE TRASH INTO TRESURE</p></h4>
+            <button class="btnLogin" onclick="switchForm('login', event)">Get Started</button>
+        </div>
+       <div id="logincontainer">
+        <div class="wrapper">  	
+            <div class="container">
+                <form  action="login.php" class="login active" method="post" id="login-form">
+                    <h2 class="title">Login with your account</h2>
+                    <div class="form-group">
+                        <label>Username</label>
+                        <div class="input-group">
+                            <input  id="email" placeholder="Enter your Username" name="username"required>
+                            <ion-icon name="person"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-group">
+                            <input type="password" pattern=".{8,}" id="password" placeholder="Your password" name="password"required>
+                            <ion-icon name="lock-closed"></ion-icon>
+                        </div>
+                        <span class="help-text">At least 8 characters</span>
+                    </div>
+                    <button type="submit" class="btn-submit">Login</button>
+                    <a href="forgetpassword/requestReset.php">Forgot password?</a>
+                    <p>I don't have an account. <a href="#" onclick="switchForm('register', event)">Register</a></p>
+                </form>
+        
+                <form action="Registration.php" class="register" method="POST"id="register-form">
+                    <h2 class="title">Register your account</h2>
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <div class="input-group">
+                            <input type="name" id="email" placeholder="Enter your Full Name " name="name" required>
+                            <ion-icon name="accessibility"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <div class="input-group">
+                            <input type="email"id="email" placeholder="Enter your Email adresses" name="email" required
+         
+                title="Please enter a valid email with @ and .com ."><ion-icon name="mail"></ion-icon>
+                        </div>
+                        <div class="help-text">Please enter your email adress.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Username">Username</label>
+                        <div class="input-group">
+                            <input id="email" placeholder="create a Username" name="username" required>
+                            <ion-icon name="person"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-group">
+                            <input type="password" id="password" placeholder="Enter your password" name="password" required
+                            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+                            title="Password must contain at least 8 characters, including at least one uppercase letter, one lowercase letter, one number, and one special character (e.g., @$!%*?&).">
+                            <ion-icon name="lock-closed"></ion-icon>
+                        </div>
+                        <span class="help-text">At least 8 characters</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-pass">Confirm password</label>
+                        <div class="input-group">
+                            <input type="password" id="confirm-pass" placeholder="Enter password again" name="confirmpassword" required>
+                            <ion-icon name="lock-closed"></ion-icon>
+                        </div>
+                        <span class="help-text">Confirm password must be same with password</span>
+                    </div>
+                    <button type="submit" class="btn-submit">Register</button>
+                    <p>I already have an account. <a href="#" onclick="switchForm('login', event)">Login</a></p>
+                </form>
+            </div>
+       </div>
+       <script>
+        const wrapper = document.querySelector('.wrapper');
+const loginForm = document.querySelector('.login');
+const registerForm = document.querySelector('.register');
+const btnLogin = document.querySelector('.btnLogin');
+
+// Initially hide the login and register forms
+loginForm.style.display = 'none';
+registerForm.style.display = 'none';
+
+btnLogin.addEventListener('click', () => {
+    // Toggle the display of login and register forms
+    if (loginForm.style.display === 'none') {
+        loginForm.style.display = 'block';
+        registerForm.style.display = 'block';
+    } else {
+        loginForm.style.display = 'none';
+        registerForm.style.display = 'none';
+    }
+});
+
+       </script>
+<script>
+    function submitForm(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    var form = event.target; // Use the event.target to reference the form element
+    var formData = new FormData(form);
+
+    fetch('Registration.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(data.message);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+
+// Add an event listener to the form for form submission
+var form = document.getElementById('register-form'); // Replace 'register-form' with your form ID
+form.addEventListener('submit', submitForm);
+</script>
+        <script>
+            function switchForm(className, e) {
+	e.preventDefault();
+	const allForm = document.querySelectorAll('form');
+	const form = document.querySelector(`form.${className}`);
+
+	allForm.forEach(item=> {
+		item.classList.remove('active');
+	})
+	form.classList.add('active');
+}
+
+
+const registerPassword = document.querySelector('form.register #password');
+const registerConfirmPassword = document.querySelector('form.register #confirm-pass');
+
+registerPassword.addEventListener('input', function () {
+	registerConfirmPassword.pattern = `${this.value}`;
+})
+        </script> 
+        <script>
+            function displayMessage(message) {
+    alert(message);
+}
+
+function handleResponse(response) {
+    if (response.status === 'success') {
+        displayMessage('LOGIN SUCCESSFULL');
+        if (response.redirect) {
+            window.location.href = response.redirect;
+        }
+    } else if (response.status === 'error') {
+        if (response.message) {
+            displayMessage(response.message);
+        } else {
+            displayMessage('An error occurred. Please try again later.');
+        }
+    } else {
+        displayMessage('Unknown response status');
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    var form = document.getElementById('login-form'); // Replace 'login-form' with your form ID
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+        var formData = new FormData(form);
+
+        fetch('login.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            handleResponse(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            displayMessage('An error occurred. Please try again later.');
+        });
+    });
+});
+
+        </script>       
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

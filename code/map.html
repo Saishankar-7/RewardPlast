@@ -1,0 +1,137 @@
+<html>
+    <head>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxzJdOn2Q-S2IhDrBRv7WcH13AKmlscWM&callback=initializeMap" async defer></script>
+        <button class="goback-button"onclick="goBack()"><ion-icon name="arrow-back-outline"></ion-icon></button>
+        <script>
+          // Define the callback function as initializeMap
+          function initializeMap() {
+            const map = new google.maps.Map(document.getElementById('map'), {
+              center: { lat: 20.5937, lng: 78.9629 }, // Set the initial center to India's coordinates
+              zoom: 4, // Set the initial zoom level
+            });
+          
+            // Array of locations (latitude and longitude) with names
+            const locations = [
+                  { lat: 17.964730576458862, lng:  78.54189905569669, name:'REWARDPLAST Main branch'}, 
+                  { lat:17.936094761545963,lng: 83.39499527972626, name:'REWARDPLAST Branch-10'},
+                  { lat:17.835618070693666,lng: 83.19625771661045, name:'REWARDPLAST Branch-3'},
+                  { lat: 21.735235328934195, lng:73.00732433944172,name:'REWARDPLAST Branch-4'},
+                  { lat:20.37145856604537,lng: 72.95385957195792,name:'REWARDPLAST Branch-5'},
+                  { lat:19.88620143649953, lng: 72.91821639363538,name:'REWARDPLAST Branch-6'},
+                  { lat:19.23126868494899, lng: 73.04296751776427,name:'REWARDPLAST Branch-7'},
+                  { lat:19.09196888542456, lng: 72.85932673411385,name:'REWARDPLAST Branch-8'},
+                  { lat:15.841475317747946, lng: 75.0045266461853,name:'REWARDPLAST Branch-9'},
+                  { lat:16.989065, lng: 82.247467,name:'REWARDPLAST Branch-2'},
+                ];
+            // Add markers for each location
+            locations.forEach(location => {
+              const marker = new google.maps.Marker({
+                position: { lat: location.lat, lng: location.lng },
+                map: map,
+                title: location.name, // Set the title for the marker (name of the location)
+              });
+          
+              // Add an info window (pop-up) to display the location name when the marker is clicked
+              const infowindow = new google.maps.InfoWindow({
+                content: location.name, // Display the location name as the content of the info window
+              });
+          
+              marker.addListener('click', function() {
+                infowindow.open(map, marker);
+              });
+            });
+          }
+      </script>
+    </head>
+    <body>
+      <div class="color">
+        <section>
+            <h2><ion-icon name="earth"></ion-icon>REWARDPLAST</h2>
+            <p class="pa">TURNING THE TRASH INTO TREASURE</p>
+        </section>
+    </div>
+    <div class="line-container">
+        <hr class="line">
+    </div>
+      <h1>OUR BRANCHES AND LOCATIONS</h1>
+        <div id="map"class="container"></div>
+    </body> 
+<script>
+  function goBack() {
+      window.location.href = 'page2.php'; // Redirect back to page2.php
+  }
+</script>
+<style>
+  
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'sans-serif';
+}
+
+body { /* Background color for the entire page */
+    margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
+    background-color: #ccea7b;
+}
+
+
+h1 {
+            text-align: center;
+            background-color: #ccea7b;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+#map {
+    width: 80%;
+    height: 500px;
+    /* Adjust the map's background color and border */
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    margin-left: 150px;
+}
+
+  section {
+    width:100%;
+    background: linear-gradient(90deg, #1e0b04, #71412a);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+section h2{
+     text-align: center;
+     font-size: 3em;
+     text-align: center;
+     background: linear-gradient(90deg, #1e0b04, #71412a);
+    color: #fff;
+    padding: 20px 0;
+    margin: 0;
+     width: 100%;
+}
+section p{
+    text-align: center;
+    font-size: 1.5em;
+}
+
+  /* Style for the "Go Back" button */
+  .goback-button {
+      position: fixed; /* Fixed positioning */
+      top: 20px; /* Adjust the top position as needed */
+      left: 20px; /* Adjust the left position as needed */
+      z-index: 9999; /* Ensure it's above other elements */
+  cursor: pointer;
+  background: linear-gradient(90deg,#1e0b04,#71412a);
+  border-radius: 1px;
+  left:40px;
+  top:25px;
+  font-size: 35px;
+  color:white;
+  padding: 6px 12px;
+  transition: all .5s ease;
+  }
+</style>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>    
+</html>

@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css?family=Jasefinz+Sans&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', 'sans-serif';
+}
+section {
+    width:100%;
+    background: linear-gradient(90deg, #1e0b04, #71412a);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+   section h2{
+     text-align: center;
+     font-size: 3em;
+     text-align: center;
+     background: linear-gradient(90deg, #1e0b04, #71412a);
+    color: #fff;
+    padding: 20px 0;
+    margin: 0;
+     width: 100%;
+}
+  section p{
+    text-align: center;
+    font-size: 1.5em;
+      }
+.space{
+    width: 300px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.divi{
+    margin: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.con1{
+    display:flex;
+    align-items: 100px;
+}
+.con2{
+    display: flex;
+    align-items: 100px;
+}
+.divi .side{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.divi .center{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.line-container {
+    position: relative;
+}
+
+.line {
+    position: absolute;
+     top: 0;
+    left: 0;
+    width: 100%; /* Makes the line span the same width as the paragraph */
+    border-top: 1px solid #000; /* Change the line style as needed */
+}
+ .side2{
+    margin-left:4cm;
+}
+.con{
+    display: flex;
+    padding-left:30px;
+    align-items: flex-start;
+}
+.container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+section {
+    flex: 1;
+    padding: 20px;
+    /* Other content styles... */
+}
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    /* Other sidebar styles... */
+}
+#check:checked ~span .sai{
+    margin-left: 250px;
+}
+#check:checked ~ .sidebar{
+    left:0;
+}
+#check:checked ~ label #btn{
+    left:250px;
+    opacity: 0;
+    pointer-events: none;
+}
+#check:checked ~ label #cancel{
+    left: 215px;
+}
+#check:checked ~section{
+    margin-left: 250px;
+}

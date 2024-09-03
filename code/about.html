@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'sans-serif';
+        }
+        body{
+            background-color: #ccea7b;
+        }
+        section {
+            background: linear-gradient(90deg, #1e0b04, #71412a);
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 3em;
+        }
+
+        section p {
+            text-align: center;
+            font-size: 1.5em;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: #ccea7b;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content > div {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .style {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .width img {
+            max-width: 100%;
+            height: auto;
+        }
+        .goback-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 9999;
+            cursor: pointer;
+            background: linear-gradient(90deg, #1e0b04, #71412a);
+            border-radius: 1px;
+            left: 40px;
+            top: 25px;
+            font-size: 35px;
+            color: white;
+            padding: 6px 12px;
+            transition: all 0.5s ease;
+        }
+    </style>
+    <title>Preview About</title>
+    <button class="goback-button" onclick="goBack()"><ion-icon name="arrow-back-outline"></ion-icon></button>
+</head>
+<body>
+    <section>
+        <h2><ion-icon name="earth"></ion-icon>REWARDPLAST</h2>
+        <p class="pa">TURNING THE TRASH INTO TREASURE</p>
+    </section>
+    <div class="line-container">
+        <hr>
+    </div>
+    <h1>ABOUT US</h1>
+    <div class="space"></div>
+    <hr>
+    <div class="space"></div>
+    <div class="content">
+        <div class="width">
+            <img src="IMG4.jpg" alt="">
+        </div>
+        <div class="align">
+            <ul type="disc">
+                <li>
+                    <p class="style">Plastic recycling is a sustainable practice that involves collecting, processing, and reusing
+                         plastic waste to create new products. This essential process not only conserves valuable resources and reduces 
+                         the environmental impact of plastic pollution but also contributes to a circular economy by minimizing the need 
+                         or virgin plastic production. By diverting plastic waste from landfills and incineration, recycling plays a crucial 
+                         role in mitigating the negative effects of plastic on our planet and promoting responsible consumption and waste 
+                         management practices.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="space"></div>
+    <div class="content">
+        <div class="align">
+            <ul type="disc">
+                <li>
+                    <p class="style">In recent years, the recycling industry has experienced remarkable growth on a global scale,
+                         driven by increasing awareness of environmental issues, government policies, technological advancements,
+                          and changing consumer attitudes. Recycling has evolved from a niche endeavor into a pivotal component of 
+                          sustainable waste management and resource conservation. This article explores the factors contributing to 
+                          the growth of recycling industries around the world and their profound impact on our planet.</p>
+                </li>
+            </ul>
+        </div>
+        <div class="width">
+            <img src="IMG3.jpg" alt="">
+        </div>
+    </div>
+    <div class="space"></div>
+    <hr>
+    <div class="space"></div>
+    <div class="content">
+        <div class="width">
+            <img src="IMG8.png" alt="">
+        </div>
+        <div class="align">
+            <ul type="disc">
+                <li>
+                    <p class="style">At our Rewardplast recycling company, we are dedicated to driving positive environmental change by 
+                        transforming waste into valuable resources. With a commitment to sustainability and innovation, we employ 
+                        state-of-the-art technology and a highly skilled workforce to efficiently collect, separate, and process various
+                         types of materials, including plastics, paper, metals, and electronics. Our mission is to lead the way in recycling
+                          excellence, contributing to a greener, more sustainable future. We take pride in our role as stewards of the 
+                          environment and continually strive to expand our recycling capabilities, reduce waste, and promote a circular 
+                          economy. Join us on our journey to make the world a cleaner, more sustainable place, one recycled item at a time.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="space"></div>
+    <hr>
+    <script>
+        function goBack() {
+            window.location.href = 'home.html';
+        }
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

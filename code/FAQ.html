@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plastic Leaderboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="FAQ.css">
+    <button class="goback-button" onclick="goBack()"><ion-icon name="arrow-back-outline"></ion-icon></button>
+    <style>
+        /* Reset default margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    background-color: #ccea7b;
+}
+
+section {
+    width: 100%;
+    background: linear-gradient(90deg, #1e0b04, #71412a);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+section h2 {
+    font-size: 3em;
+    padding: 20px 0;
+    margin: 0;
+}
+
+section p {
+    font-size: 1.5em;
+}
+
+h3 {
+    text-align: center;
+    font-size: 30px;
+    padding: 20px;
+    color: black;
+    margin-bottom: 20px;
+}
+
+/* Style the "Go Back" button */
+.goback-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 9999;
+    cursor: pointer;
+    background: linear-gradient(90deg, #1e0b04, #71412a);
+    border-radius: 1px;
+    left: 40px;
+    top: 25px;
+    font-size: 35px;
+    color: white;
+    padding: 6px 12px;
+    transition: all .5s ease;
+}
+        .layout{
+            width:1000px;
+            margin: auto;
+        }
+        .accordion{
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            background:#fff;
+            border-radius: 10px;
+        }
+        .accordion__question p{
+            margin: 5px;
+            padding: 0;
+            font-family: Verdana;
+            font-size: 20px;
+        }
+        .accordion__answer p{
+            margin: 5px;
+            padding: 10px;
+            font-size: large;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color:black;
+            background: rgb(175, 238, 238);
+            border-radius: 10px; 
+        }
+        .accordion:hover{
+            cursor: pointer;
+            background-color: yellow;
+        }
+        .accordion__answer {
+            display: none;
+        } 
+        .accordion.active .accordion__answer {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <h2><ion-icon name="earth"></ion-icon>REWARDPLAST</h2>
+    <p class="pa">TURNING THE TRASH INTO TREASURE</p>
+</section>
+<h3>FAQ's</h3>
+    <div class="layout">
+        <div class="accordion">
+            <div class="accordion__question">
+                <p>What is RewardPlast?</p>
+
+            </div>
+            <div class="accordion__answer">
+                <p> RewardPlast is an innovative platform dedicated to recycling plastic waste. We offer a user-friendly interface 
+                    that allows individuals to request recycling services and earn rewards for their contributions.
+                   </p>
+
+            </div>
+        </div>
+        <div class="accordion">
+            <div class="accordion__question">
+                <p>How do I get started on RewardPlast?</p>
+
+            </div>
+            <div class="accordion__answer">
+                <p> To get started, simply create a user account, log in, and access your user panel. From there, you 
+                    can explore the features and begin making recycling requests.
+                </p>
+            </div>
+        </div>
+        <div class="accordion">
+            <div class="accordion__question">
+                <p>How do I earn rewards for recycling plastic?</p>
+
+            </div>
+            <div class="accordion__answer">
+                <p>  When you create a recycling request and our team processes it, you'll earn monetary rewards. The more 
+                    you recycle, the more you earn.
+                </p>
+            </div>
+        </div>
+        <div class="accordion">
+            <div class="accordion__question">
+                <p> What is the Leaderboard, and how does it work?</p>
+
+            </div>
+            <div class="accordion__answer">
+                <p> The Leaderboard is a feature that gamifies recycling. It ranks users based on their recycling efforts and 
+                    encourages friendly competition. You can earn recognition and rewards for your achievements.
+                   
+                </p>
+            </div>
+        </div>
+        <div class="accordion">
+            <div class="accordion__question">
+                <p> Is my personal information secure on RewardPlast?</p>
+
+            </div>
+            <div class="accordion__answer">
+                <p> Yes, we take your privacy seriously. Your personal information is protected using industry-standard security measures.
+                     You can find more details in our privacy policy.
+                </p>
+            </div>
+        </div>
+        <div class="accordion">
+            <div class="accordion__question">
+                <p> How can I contact RewardPlast for support or inquiries?</p>
+            </div>
+            <div class="accordion__answer">
+                <p>You can easily get in touch with our team through the "Contact Us" feature in your user panel. We're here
+                     to assist with any questions or concerns.
+                </p>
+            </div>
+        </div>
+        <div class="accordion">
+            <div class="accordion__question">
+                <p>What happens to the plastic I recycle through RewardPlast?</p>
+
+            </div>
+            <div class="accordion__answer">
+                <p>  We ensure that the collected plastic is properly recycled or processed. Our aim is to contribute to 
+                    environmental sustainability and responsible waste management.
+                </p>
+            </div>
+        </div>
+        <div class="accordion">
+            <div class="accordion__question">
+                <p> How can I become a recycling center partner with RewardPlast?</p>
+
+            </div>
+            <div class="accordion__answer">
+                <p>If you're a recycling center interested in partnering with RewardPlast, please contact our admin team for collaboration
+                     opportunities.
+                </p>
+            </div>
+        </div>
+        <div class="accordion">
+            <div class="accordion__question">
+                <p> What are the future plans for RewardPlast?</p>
+
+            </div>
+            <div class="accordion__answer">
+                <p> RewardPlast is committed to ongoing innovation. We plan to expand our services, improve user engagement, and collaborate with sustainability initiatives for a cleaner
+                    and more sustainable future.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let answers=document.querySelectorAll(".accordion");
+        answers.forEach((event)=>{
+            event.addEventListener('click',()=>{
+                if(event.classList.contains("active")){
+                    event.classList.remove("active");
+                }
+                else{
+                    event.classList.add("active");
+                }
+            })
+        })
+    </script>
+<script>
+    function goBack() {
+        window.location.href = 'home.html'; // Redirect back to home.html
+    }
+</script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
